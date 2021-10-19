@@ -34,4 +34,5 @@ def prep_log(df):
         'program_id'   
     ]
     df = df.drop(columns=cols_to_drop)
+    df['module/lesson'] = df.path.str.split('/').str[0] + '/' + df.path.str.split('/').str[1]
     return df
